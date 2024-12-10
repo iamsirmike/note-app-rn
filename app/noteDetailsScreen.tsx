@@ -21,7 +21,6 @@ const AddNoteSchema = Yup.object().shape({
 
 export default function NoteDetailsScreen() {
   const [shouldEdit, setShouldEit] = useState(false);
-  // const [content, setContent] = useState("");
   const note: NoteType = useLocalSearchParams();
 
   const router = useRouter();
@@ -67,12 +66,10 @@ export default function NoteDetailsScreen() {
             />
             <KeyboardAwareScrollView
               style={{ flex: 1 }}
-              // contentContainerStyle={styles.container}
               enableOnAndroid={true} // Ensures functionality on Android
               extraHeight={100} // Adjusts spacing above the keyboard
               keyboardShouldPersistTaps="handled"
               enableAutomaticScroll={true}
-              // behavior={Platform.OS === "ios" ? "padding" : "height"}
             >
               <TextInput
                 placeholder="Title"
@@ -114,7 +111,7 @@ export default function NoteDetailsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: "center",
+
     backgroundColor: theme.appBackgroundColor,
   },
   titleTextInput: {
@@ -135,6 +132,5 @@ const styles = StyleSheet.create({
     color: "red",
     fontSize: 15,
     marginLeft: 16,
-  },
-  //   scrollViewContent: { flexGrow: 1 },
+  }, //   scrollViewContent: { flexGrow: 1 },
 });

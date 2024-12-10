@@ -100,7 +100,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     paddingTop: 60,
     paddingLeft: 16,
-    // paddingBottom: 30,
     backgroundColor: theme.appBackgroundColor,
     justifyContent: "space-between",
   },

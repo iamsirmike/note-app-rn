@@ -19,21 +19,7 @@ const AddNoteSchema = Yup.object().shape({
     .required("Please provide some content"),
 });
 
-// const AddNoteSchema = z.object({
-//   title: z
-//     .string()
-//     .min(2, { message: "Too Short!" })
-//     .max(50, { message: "Too Short!" }),
-//   // .required("Title is required"),
-
-//   content: z.string().min(2, "Too Short!").max(500, "Too Long!"),
-//   // .required("Please provide some content"),
-// });
-
 export default function AddNoteScreen() {
-  // const [title, setTitle] = useState("");
-  // const [content, setContent] = useState("");
-
   const router = useRouter();
 
   const context = useContext(NoteContext);
@@ -62,12 +48,10 @@ export default function AddNoteScreen() {
             />
             <KeyboardAwareScrollView
               style={{ flex: 1 }}
-              // contentContainerStyle={styles.container}
               enableOnAndroid={true} // Ensures functionality on Android
               extraHeight={100} // Adjusts spacing above the keyboard
               keyboardShouldPersistTaps="handled"
               enableAutomaticScroll={true}
-              // behavior={Platform.OS === "ios" ? "padding" : "height"}
             >
               <TextInput
                 placeholder="Title"
@@ -131,5 +115,4 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginLeft: 16,
   },
-  //   scrollViewContent: { flexGrow: 1 },
 });

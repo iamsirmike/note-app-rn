@@ -22,7 +22,7 @@ export default function HomeScreen() {
 
   const context = useContext(NoteContext);
   if (!context) {
-    return null; // or handle the error appropriately
+    return null;
   }
   const { notes, fetchNotes } = context;
 
@@ -53,8 +53,6 @@ export default function HomeScreen() {
         ListEmptyComponent={() => <EmptyState />}
       />
 
-      {/* <EmptyState /> */}
-
       <FloatingButton onPress={() => router.push("/addNoteScreen")} />
     </View>
   );
@@ -67,6 +65,6 @@ const styles = StyleSheet.create({
     backgroundColor: theme.appBackgroundColor,
   },
   separator: {
-    height: 15, // Adjust the height for spacing
+    height: 15,
   },
 });
