@@ -11,7 +11,12 @@ export async function getFromStorage(key: string) {
 
 export async function saveToStorage(key: string, data: object) {
   try {
-    console.log("data", data);
     await AsyncStorage.setItem(key, JSON.stringify(data));
+  } catch {}
+}
+
+export async function clearStorage() {
+  try {
+    await AsyncStorage.clear();
   } catch {}
 }
